@@ -244,23 +244,49 @@ article:last-child {
 }
 
 /* logo */
-.logo-wrapper {
-  max-width: 200px;
-}
-
-.logo {
+.logo-link {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   -webkit-box-align: center;
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.logo-img {
+  max-width: 80px;
+  max-height: 80px;
+  -o-object-fit: fill;
+     object-fit: fill;
+  margin-right: 20px;
+}
+
+@media screen and (max-width: 736px) {
+  .logo-img {
+    max-width: 50px;
+    max-height: 50px;
+    margin-right: 0;
+    margin-bottom: 5px;
+  }
+}
+
+.logo-text {
+  font-family: 'Open Sans', sans-serif;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+@media screen and (max-width: 736px) {
+  .logo-text {
+    font-size: 16px;
+  }
 }
 
 /* Containers */
@@ -295,7 +321,6 @@ article:last-child {
   .container.\31 25\25 {
     width: 100%;
     max-width: 1500px;
-    min-width: 1200px;
   }
   .container.\37 5\25 {
     width: 900px;
@@ -315,7 +340,6 @@ article:last-child {
   .container.\31 25\25 {
     width: 100%;
     max-width: 1250px;
-    min-width: 1000px;
   }
   .container.\37 5\25 {
     width: 750px;
@@ -334,8 +358,6 @@ article:last-child {
 @media screen and (max-width: 736px) {
   .container.\31 25\25 {
     width: 100%;
-    max-width: 125%;
-    min-width: 100%;
   }
   .container.\37 5\25 {
     width: 75%;
@@ -1384,8 +1406,8 @@ ul.contact li:first-child:before {
 
 /* Wrappers */
 #header-wrapper {
-  background-color: #3F6093;
-  background-image: url("../../images/banner.jpg");
+  background: -webkit-gradient(linear, left bottom, left top, from(#c31432), to(#240b36));
+  background: linear-gradient(to top, #c31432, #240b36);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -1477,7 +1499,7 @@ ul.contact li:first-child:before {
     height: 16.5em;
   }
   .homepage #header-wrapper {
-    height: auto;
+    height: 100vh;
   }
   #main-wrapper {
     padding: 0 0 4.5em 0;
@@ -1502,25 +1524,47 @@ ul.contact li:first-child:before {
     color: #fff;
   }
   /* Nav */
-  #nav {
-    position: absolute;
-    right: 2.5em;
-    top: 0;
+  .nav-wrapper {
+    max-width: 1200px;
+    width: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  #nav ul {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+    -webkit-justify-content: flex-end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    margin-bottom: 0;
   }
   #nav ul li {
-    float: left;
-    margin-left: 1.5em;
+    margin-right: 1.5em;
     height: 7em;
     line-height: 7em;
   }
   #nav ul li a {
-    -webkit-transition: background-color .25s ease-in-out;
-    transition: background-color .25s ease-in-out;
     color: #ccc;
     text-decoration: none;
     text-transform: uppercase;
-    font-weight: 700;
-    padding: 0.55em 1.4em 0.55em 1.4em;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    padding-bottom: 0.55em;
+    color: #fff;
     border-radius: 6px;
     outline: 0;
   }
@@ -1529,8 +1573,18 @@ ul.contact li:first-child:before {
   }
   #nav ul li.current_page_item a,
   #nav ul li.active a {
-    background: #20242A;
-    color: #fff;
+    position: relative;
+    font-weight: 800;
+  }
+  #nav ul li.current_page_item a::after,
+  #nav ul li.active a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    display: block;
+    background-color: #fff;
   }
   #nav > ul > li > ul {
     display: none;
@@ -1643,11 +1697,6 @@ ul.contact li:first-child:before {
     font-size: 2em;
   }
   /* Nav */
-  #nav ul li {
-    margin-left: 0.5em;
-    height: 5em;
-    line-height: 5em;
-  }
   /* Banner */
   #banner {
     height: 22em;
@@ -1744,16 +1793,13 @@ ul.contact li:first-child:before {
     padding-top: 0;
   }
   #titleBar {
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
     -webkit-transition: -webkit-transform 0.5s ease;
     transition: -webkit-transform 0.5s ease;
     transition: transform 0.5s ease;
     transition: transform 0.5s ease, -webkit-transform 0.5s ease;
     display: block;
-    height: 44px;
-    left: 0;
     position: fixed;
+    left: 0;
     top: 0;
     width: 100%;
     z-index: 10001;
@@ -1761,7 +1807,23 @@ ul.contact li:first-child:before {
     background: rgba(44, 47, 52, 0.95);
   }
   #titleBar .title {
-    display: block;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
     text-align: center;
     color: #fff;
     font-size: 1.2em;
@@ -1769,6 +1831,7 @@ ul.contact li:first-child:before {
     text-transform: uppercase;
     letter-spacing: -0.05em;
     line-height: 44px;
+    padding: 10px;
   }
   #titleBar .toggle {
     position: absolute;
