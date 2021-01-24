@@ -1,5 +1,5 @@
 // --------------------------------elemets--------------------------------
-
+// -----------------------------------------------------------------------
 /* logo */
 .logo-wrapper {}
 
@@ -30,6 +30,101 @@
     font-weight: 800;
 
     @media screen and (max-width: 736px) {
-       font-size: 16px;
+        font-size: 16px;
+    }
+}
+
+// --------------------------------------------------------------------------------
+/* buttons*/
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media screen and (max-width: 500px) {
+        flex-direction: column;
+    }
+
+    &__button-fill {       
+        text-align: center;
+        padding: 18px 40px;
+        background-color: #fcfdfd;
+        border-radius: 6px;
+        font-family: Roboto;
+        font-size: 20px;
+        line-height: 30px;
+        font-weight: 900;
+        color: #090909;
+        text-transform: uppercase;
+
+        @media screen and (max-width: 500px) {
+            margin-right: 0;
+            margin-bottom: 20px;
+        }
+    }
+
+    &__first {
+        margin-right: 40px;
+
+        @media screen and (max-width: 500px) {
+            margin-right: 0;
+            margin-bottom: 20px;
+        }
+    }
+
+    &__button-border {      
+        text-align: center;
+        padding: 18px 40px;
+        border: 2px solid #fefefe;
+        border-radius: 6px;
+        font-family: Roboto;
+        font-size: 20px;
+        font-weight: 500;
+        letter-spacing: 0.15em;
+        color: #fefefe;
+        text-transform: uppercase;
+        transition: .5s;
+
+        &:hover {
+            background-color: #fcfdfd;
+            color: #090909;
+        }
+    }
+}
+
+// ----------------------------------------------------------------------------------
+/*line section*/
+.line-wrapper {
+    width: 100%;
+    padding: 50px 20px;
+    background-color: #a01333;
+
+}
+
+.line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media screen and (max-width: 1200px) {
+        flex-direction: column;
+    }
+
+    p {
+        font-family: Roboto;
+        font-size: 18px;
+        font-weight: 500;
+        letter-spacing: 0.15em;
+        color: #cacaca;
+        padding-right: 40px;
+        text-transform: uppercase;
+        line-height: 30px;
+
+        @media screen and (max-width: 1200px) {
+            font-size: 16px;
+            text-align: center;
+            padding-right: 0;
+            padding-bottom: 40px;
+        }
     }
 }
