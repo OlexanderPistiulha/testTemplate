@@ -1075,6 +1075,12 @@
     height: 100%;
     object-fit: cover;
     border-radius: 6px;
+
+    transition: .5s;
+
+    &:hover {
+        transform: scale(1.2);
+    }
 }
 
 .image.full {
@@ -1396,6 +1402,7 @@ ul.contact li:first-child {
         display: block;
         width: 100%;
         height: 350px;
+        overflow: hidden;
     }
 
     // .box.post p {
@@ -1752,6 +1759,7 @@ ul.contact li:first-child {
         display: block;
         width: 100%;
         margin: 0 0 1.5em 0;
+
     }
 
     .image img {
@@ -1759,6 +1767,11 @@ ul.contact li:first-child {
         width: 100%;
         height: 100%;
         object-fit: cover;
+        transition: .5s;
+
+        &:hover {
+            transform: scale(1.2);
+        }
     }
 
     // .image.left {
