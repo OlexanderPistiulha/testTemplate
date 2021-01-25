@@ -1421,6 +1421,13 @@ ul.contact li:first-child {
         min-height: 500px;
     }
 
+    .secondpage {
+        #header-wrapper {
+            padding: 10px 0;
+            height: auto;
+        }
+    }
+
     #main-wrapper {
         padding: 0 0 4.5em 0;
     }
@@ -1433,8 +1440,8 @@ ul.contact li:first-child {
 
     #header {
         position: relative;
-        height: 7em;
-        line-height: 7em;
+        // height: 7em;
+        // line-height: 7em;
         padding-left: 2.5em;
     }
 
@@ -1654,6 +1661,13 @@ ul.contact li:first-child {
         min-width: 500px;
     }
 
+    .secondpage {
+        #header-wrapper {
+            padding: 10px 0;
+            height: auto;
+        }
+    }
+
     #main-wrapper {
         padding: 0 0 3.5em 0;
     }
@@ -1665,8 +1679,8 @@ ul.contact li:first-child {
     /* Header */
 
     #header {
-        height: 5em;
-        line-height: 5em;
+        // height: 5em;
+        // line-height: 5em;
         margin-top: 0;
     }
 
@@ -1980,13 +1994,20 @@ ul.contact li:first-child {
 
     /* Wrappers */
 
-    #header-wrapper {
+    .homepage #header-wrapper {
         height: 100vh;
         min-height: 700px;
         display: flex;
         justify-content: center;
         align-items: center;
         width: 100%;
+    }
+
+    .secondpage {
+        #header-wrapper {
+            padding: 30px 0;
+            height: auto;
+        }
     }
 
     .homepage #header-wrapper {
