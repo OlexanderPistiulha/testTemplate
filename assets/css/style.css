@@ -246,6 +246,7 @@ a {
   font-size: 20px;
   line-height: 30px;
   font-weight: 900;
+  letter-spacing: 0.15em;
   color: #090909;
   text-transform: uppercase;
 }
@@ -337,6 +338,111 @@ a {
     text-align: center;
     padding-right: 0;
     padding-bottom: 40px;
+  }
+}
+
+.main-wrapper {
+  padding: 50px 20px;
+  background: #20242a;
+}
+
+.main-content {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.article-list {
+  width: 70%;
+}
+
+@media screen and (max-width: 800px) {
+  .article-list {
+    width: 100%;
+  }
+}
+
+.article-list article {
+  margin-bottom: 20px;
+}
+
+.article-list article:nth-last-child(1) {
+  margin-bottom: 0;
+}
+
+.post-data {
+  font-family: Roboto;
+  font-size: 12px;
+  color: #cacaca;
+  font-weight: 700;
+}
+
+.post-data__author-name {
+  letter-spacing: 0.15em;
+}
+
+.post-content-wrapp {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.post-content {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.post-content__text {
+  margin-bottom: 15px;
+}
+
+.widget-list {
+  width: 25%;
+  height: 300px;
+  background-color: white;
+}
+
+@media screen and (max-width: 800px) {
+  .widget-list {
+    display: none;
   }
 }
 
@@ -1241,6 +1347,9 @@ a {
 .image img {
   display: block;
   width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-radius: 6px;
 }
 
@@ -1251,8 +1360,7 @@ a {
 }
 
 .image.left {
-  float: left;
-  margin: 0em 2.5em 2.5em 0;
+  margin-bottom: 15px;
 }
 
 ul.style1 {
@@ -1343,6 +1451,7 @@ ul.contact li:first-child:before {
   font-size: 1.05em;
   text-transform: uppercase;
   letter-spacing: -0.05em;
+  letter-spacing: 0.15em;
 }
 
 .button:hover {
@@ -1410,7 +1519,14 @@ ul.contact li:first-child:before {
 }
 
 .box header h2 {
-  margin-bottom: 0.5em;
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  color: #cacaca;
+  padding-right: 40px;
+  text-transform: uppercase;
+  line-height: 30px;
 }
 
 .box footer {
@@ -1462,10 +1578,6 @@ ul.contact li:first-child:before {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-}
-
-#main-wrapper {
-  background: #20242a;
 }
 
 /* Banner */
@@ -1535,10 +1647,9 @@ ul.contact li:first-child:before {
     margin: 0 0 0.8em 0;
   }
   .box.post .image {
-    width: 10em;
-  }
-  .box.post p {
-    margin-left: 12.5em;
+    display: block;
+    width: 100%;
+    height: 350px;
   }
   /* Wrappers */
   .homepage #header-wrapper {
@@ -1569,6 +1680,8 @@ ul.contact li:first-child:before {
   }
   /* Nav */
   .nav-wrapper {
+    position: relative;
+    z-index: 1000;
     max-width: 1200px;
     width: 100%;
     display: -webkit-box;
@@ -1821,6 +1934,8 @@ ul.contact li:first-child:before {
     clear: both;
   }
   .image {
+    -o-object-fit: cover;
+       object-fit: cover;
     display: block;
     width: 100%;
     margin: 0 0 1.5em 0;
@@ -1828,10 +1943,9 @@ ul.contact li:first-child:before {
   .image img {
     display: block;
     width: 100%;
-  }
-  .image.left {
-    width: 30%;
-    margin: 0 2em 0.75em 0;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
   .box {
     padding: 2em 10px 2em 10px;
