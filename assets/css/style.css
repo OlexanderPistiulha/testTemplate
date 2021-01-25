@@ -2504,4 +2504,51 @@ ul.contact li:first-child {
     display: none;
   }
 }
+
+.about-wrapper {
+  padding: 50px 20px;
+}
+
+.about-header {
+  margin-bottom: 60px;
+}
+
+.about-title {
+  font-family: Roboto;
+  font-size: 28px;
+  line-height: 36px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  color: #f9fbfd;
+  margin-bottom: 30px;
+}
+
+@media screen and (max-width: 800px) {
+  .about-title {
+    font-size: 24px;
+  }
+}
+
+.about-title__center {
+  text-align: center;
+}
+
+.about-subtitle {
+  font-family: Roboto;
+  font-size: 18px;
+  line-height: 30px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  color: #cacaca;
+}
+
+@media screen and (max-width: 800px) {
+  .about-subtitle {
+    font-size: 16px;
+  }
+}
+
+.about-content {
+  margin-bottom: 60px;
+}
 /*# sourceMappingURL=style.css.map */
