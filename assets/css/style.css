@@ -382,7 +382,6 @@ a {
 
 .widget {
   width: 100%;
-  margin-bottom: 46px;
 }
 
 .widget_search {
@@ -1607,14 +1606,16 @@ ul.contact p {
 ul.contact li {
   position: relative;
   border-top: solid 1px rgba(255, 255, 255, 0.1);
-  padding: 1.25em 0 0 2.75em;
+  padding: 5px 28px;
   margin-top: 1.25em;
 }
 
 ul.contact li:before {
   position: absolute;
   left: 0;
-  top: 1.2em;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
   color: #fff;
 }
 
@@ -1622,10 +1623,6 @@ ul.contact li:first-child {
   border-top: 0;
   padding-top: 0;
   margin-top: 0;
-}
-
-ul.contact li:first-child:before {
-  top: 0.1em;
 }
 
 .timestamp {
